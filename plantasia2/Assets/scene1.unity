@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7908194eb187e594e89c348d7b54b705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrade: {fileID: 11400000, guid: 997c40aa29004c04a9156fbcc5131b39, type: 2}
+  upgrade: {fileID: 11400000, guid: 7d36f208922810c47865a13b80b19616, type: 2}
   AmountOwned: 0
   b: 0
   a: 0
@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7908194eb187e594e89c348d7b54b705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrade: {fileID: 11400000, guid: 373933de1eebe5c4d86fd640b2681f45, type: 2}
+  upgrade: {fileID: 11400000, guid: 6f88e169f7e454a419cf4a995778c949, type: 2}
   AmountOwned: 0
   b: 0
   a: 0
