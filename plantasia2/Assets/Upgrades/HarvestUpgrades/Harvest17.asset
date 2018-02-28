@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed0004235595a34684274b509870266, type: 3}
+  m_Name: Harvest17
+  m_EditorClassIdentifier: 
+  name: Harvest17
+  description2: 
+  description: Harvest +21.59B
+  AmountOwned: 1
+  price: 21910000000000000
+  PriceUpgrade: 0
+  HarvestUpgrade: 1590000000
+  SoldUpgrade: 0
+  isMultiple: 0

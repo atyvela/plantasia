@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222086931131002200}
   - component: {fileID: 114277378007282428}
   - component: {fileID: 114060363740670312}
+  - component: {fileID: 114066560208974730}
   m_Layer: 8
   m_Name: UpgradeButtonPrefab
   m_TagString: Untagged
@@ -135,7 +136,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -194,6 +195,25 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114066560208974730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363843578992372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 900
+  m_PreferredHeight: 150
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114197131515924882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -241,11 +261,14 @@ MonoBehaviour:
   upgrade: {fileID: 11400000, guid: 7d36f208922810c47865a13b80b19616, type: 2}
   AmountOwned: 0
   b: 0
+  active: 0
   a: 0
   UpgradePrice: 0
+  c: 0
   NameText: {fileID: 114197131515924882}
   DescriptionText: {fileID: 114803825226969142}
   PriceText: {fileID: 114029430320786088}
+  isMultiple: 0
   button: {fileID: 114060363740670312}
 --- !u!114 &114277378007282428
 MonoBehaviour:
@@ -300,7 +323,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -348,9 +371,9 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 470, y: -399}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 900, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224200409042734468
@@ -366,10 +389,10 @@ RectTransform:
   m_Father: {fileID: 224096349789598230}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 835, y: 2.499999}
-  m_SizeDelta: {x: 100, y: -65}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 131, y: -33.592102}
+  m_SizeDelta: {x: 213.84998, y: 97.184204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224369267800885314
 RectTransform:
@@ -386,8 +409,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 461, y: 2.5}
-  m_SizeDelta: {x: 344.3, y: -65}
+  m_AnchoredPosition: {x: 705, y: -34}
+  m_SizeDelta: {x: 344.3, y: -95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224684091117901756
 RectTransform:
@@ -402,8 +425,8 @@ RectTransform:
   m_Father: {fileID: 224096349789598230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195, y: 4.675}
-  m_SizeDelta: {x: 348.43, y: -69.35}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 195, y: 26}
+  m_SizeDelta: {x: 348.43, y: 80.65}
   m_Pivot: {x: 0.5, y: 0.5}

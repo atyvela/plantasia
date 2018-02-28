@@ -13,23 +13,25 @@ public class UpgradeButtonDisplay : MonoBehaviour {
 
     public static int HarvestS = 1;
     public static int BeanPrice = 1; 
-    public static int SoldS = 1;
+    public static Double SoldS = 1;
     public int b;
+    public int active = 0;
     public double a;
     public double UpgradePrice;
     public double c;
     public Text NameText;
-    public Text DescriptionText;
+    public Text DescriptionText, DescriptionText2;
     public Text PriceText;
-
+    public int isMultiple;
     public Button button;
 
 	void Start () {
         NameText.text = upgrade.name;
         DescriptionText.text = upgrade.description;
+        DescriptionText2.text = upgrade.description2;
         UpgradePrice = upgrade.price;
         AmountOwned = upgrade.AmountOwned;
-        
+        isMultiple = upgrade.isMultiple;
 
 
 
@@ -45,6 +47,8 @@ public class UpgradeButtonDisplay : MonoBehaviour {
             b = 2;
         if (AmountOwned + 1 < 10)
             b = 1;
+        if (active > 0)
+            button.interactable = false;
 
     }
 
@@ -57,9 +61,10 @@ public class UpgradeButtonDisplay : MonoBehaviour {
 
         ClickerControlScript.MoneyAmount -= UpgradePrice;
         
-        UpgradePrice = (AmountOwned + 1) * upgrade.price * (AmountOwned + 1) * b; 
-
+        UpgradePrice = (AmountOwned + 1) * upgrade.price * (AmountOwned + 1) * b;
         AmountOwned += 1;
+        active += isMultiple;
+        
 
 
 
@@ -86,27 +91,27 @@ public class UpgradeButtonDisplay : MonoBehaviour {
         if (UpgradePrice <= 1000000000000000000)
         {
             c = (UpgradePrice / 1000000000000000000);
-            PriceText.text = "$" + c.ToString() + "Qt";
+            PriceText.text = "$" + c.ToString("F2") + "Qt";
         }
         if (UpgradePrice >= 1000000000000000 && UpgradePrice < 1000000000000000000)
         {
             c = (UpgradePrice / 1000000000000000);
-            PriceText.text = "$" + c.ToString() + "Q";
+            PriceText.text = "$" + c.ToString("F2") + "Q";
         }
         if (UpgradePrice >= 1000000000000 && UpgradePrice < 1000000000000000)
         {
             c = (UpgradePrice / 1000000000000);
-            PriceText.text = "$" + c.ToString() + "T";
+            PriceText.text = "$" + c.ToString("F2") + "T";
         }
         if (UpgradePrice >= 1000000000 && UpgradePrice < 1000000000000)
         {
             c = (UpgradePrice / 1000000000);
-            PriceText.text = "$" + c.ToString() + "B";
+            PriceText.text = "$" + c.ToString("F2") + "B";
         }
         if (UpgradePrice >= 1000000 && UpgradePrice < 1000000000)
         {
             c = (UpgradePrice / 1000000);
-            PriceText.text = "$" + c.ToString() + "M";
+            PriceText.text = "$" + c.ToString("F2") + "M";
         }
         if (UpgradePrice < 1000000)
             PriceText.text = "$" + UpgradePrice.ToString();

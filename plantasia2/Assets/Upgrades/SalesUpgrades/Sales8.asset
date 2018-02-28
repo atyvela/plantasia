@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Name: Sales8
   m_EditorClassIdentifier: 
   name: Sales8
+  description2: 
   description: sales + 6000
   AmountOwned: 1
   price: 33000000
   PriceUpgrade: 0
   HarvestUpgrade: 0
   SoldUpgrade: 6000
+  isMultiple: 0

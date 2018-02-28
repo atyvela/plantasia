@@ -11,10 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed0004235595a34684274b509870266, type: 3}
   m_Name: Harvest1
   m_EditorClassIdentifier: 
-  name: Harvest 1
-  description: Harvests +1
+  name: Worker
+  description2: A plantation worker to collect your beans
+  description: Harvest +1
   AmountOwned: 1
   price: 20
   PriceUpgrade: 0
   HarvestUpgrade: 1
   SoldUpgrade: 0
+  isMultiple: 0

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Upgrades1
   description: Beanprice +1
-  AmountOwned: 0
-  price: 0
-  PriceUpgrade: 0
+  AmountOwned: 1
+  price: 10
+  PriceUpgrade: 1
   HarvestUpgrade: 0
   SoldUpgrade: 0
+  isMultiple: 1

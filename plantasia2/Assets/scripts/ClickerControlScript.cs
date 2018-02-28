@@ -7,7 +7,7 @@ public class ClickerControlScript : MonoBehaviour {
 
     public Button harvestButton, SellButton, ExitButton;
 
-    public GameObject ShopPanel,HarvestPanel, SalesPanel, UpgradePanel;
+    public GameObject ShopPanel,HarvestPanel, SalesPanel, UpgradePanel, Menupanel;
 
     public Text BeansText, MoneyText, BeansStext, MoneyStext;
 
@@ -22,7 +22,8 @@ public class ClickerControlScript : MonoBehaviour {
 
 
 	void Start () {
-        
+
+        Menupanel.gameObject.SetActive(false);
         SellButton.interactable = true;
         
         ShopPanel.gameObject.SetActive(false);
@@ -139,8 +140,5 @@ public class ClickerControlScript : MonoBehaviour {
 
     }
 
-    public void doExitGame()
-    {
-        Application.Quit();
-    }
+    
 }

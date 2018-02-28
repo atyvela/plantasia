@@ -11,10 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed0004235595a34684274b509870266, type: 3}
   m_Name: Harvest9
   m_EditorClassIdentifier: 
-  name: Harvest 8
+  name: Harvest 9
+  description2: 
   description: Harvest +14000
   AmountOwned: 1
   price: 40000000
   PriceUpgrade: 0
   HarvestUpgrade: 14000
   SoldUpgrade: 0
+  isMultiple: 0
