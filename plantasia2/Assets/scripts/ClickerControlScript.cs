@@ -11,9 +11,10 @@ public class ClickerControlScript : MonoBehaviour {
 
     public Text BeansText, MoneyText, BeansStext, MoneyStext;
 
-    public static double MoneyAmount = 100; // how much money collected 
+    public static double MoneyAmount = 1000000000000; // how much money collected 
 
-    private double d;
+    public Image image;
+    private double d,e;
 
     public double BeansAmount; //how meany beans harvested 
     public double BeanPrice; // how much money per bean sold
@@ -22,7 +23,7 @@ public class ClickerControlScript : MonoBehaviour {
 
 
 	void Start () {
-
+        image.enabled = false;
         Menupanel.gameObject.SetActive(false);
         SellButton.interactable = true;
         
@@ -31,6 +32,7 @@ public class ClickerControlScript : MonoBehaviour {
         UpgradePanel.gameObject.SetActive(false);
         InvokeRepeating("BeansPerSec", 1.0f, 0.1f);
         InvokeRepeating("MoneyPerSec", 1.0f, 0.1f);
+
 
 
     }
@@ -45,9 +47,10 @@ public class ClickerControlScript : MonoBehaviour {
         EnoughBeansToSell();
 
 
-        BeansStext.text = "Net:" + ((HarvestS - 1) - (SoldS - 1));
-        MoneyStext.text = "Cps:" + ((SoldS -1)* BeanPrice);
-        BeansText.text = "Beans:" + BeansAmount.ToString("F0");
+        BeansStext.text = ((HarvestS - 1) - (SoldS - 1)) + " per second";
+        MoneyStext.text = ((SoldS -1)* BeanPrice) + " per second";
+        //BeansText.text = "Beans:" + BeansAmount.ToString("F0");
+        BeanAmountDisplay();
         MoneyAmountDisplay();
         //MoneyText.text = "$" + MoneyAmount.ToString("F0");
 
@@ -56,13 +59,13 @@ public class ClickerControlScript : MonoBehaviour {
     public void IncreaseBeansAmount()
     {
        
-        BeansAmount = BeansAmount + HarvestS;
+        BeansAmount += HarvestS;
     }
 
     public void IncreaseMoneyAmount()
     {
         
-        BeansAmount -= 1;
+        BeansAmount -= SoldS;
         MoneyAmount = MoneyAmount + BeanPrice * SoldS;
     }
 
@@ -78,6 +81,7 @@ public class ClickerControlScript : MonoBehaviour {
 
     public void OpenShop()
     {
+        image.enabled = true;
         ShopPanel.gameObject.SetActive (true);
         ExitButton.interactable = true;
         ExitButton.gameObject.SetActive(true);
@@ -85,14 +89,30 @@ public class ClickerControlScript : MonoBehaviour {
 
     public void CloseShop()
     {
+        image.enabled = false;
         ShopPanel.gameObject.SetActive (false);
     }
 
 
     public void BeansPerSec()
     {
-        if ((SoldS - 1) <= BeansAmount)
+        if ((SoldS ) < BeansAmount)
             BeansAmount = BeansAmount + (((HarvestS - 1)) * 0.1f) - ((SoldS - 1) *0.1f);
+
+        if ((SoldS) == BeansAmount)
+            BeansAmount += 0;
+
+        if ((SoldS) > BeansAmount && BeansAmount >= 1) { 
+            BeansAmount = BeansAmount - (SoldS * 0.1f);
+            if(BeansAmount < 0)
+            {
+                BeansAmount = BeansAmount + (BeansAmount * -1);
+            }
+        
+
+        }
+                
+
 
     }
     public void MoneyPerSec()
@@ -112,33 +132,67 @@ public class ClickerControlScript : MonoBehaviour {
         if (MoneyAmount <= 1000000000000000000)
         {
             d = (MoneyAmount / 1000000000000000000);
-             MoneyText.text = "$" +  d.ToString("F3") + "Qt";
+             MoneyText.text =   d.ToString("F3") + " Quintillion Coins";
         }
         if (MoneyAmount >= 1000000000000000 && MoneyAmount < 1000000000000000000)
         {
             d = (MoneyAmount / 1000000000000000);
-             MoneyText.text = "$" +  d.ToString("F3") + "Q";
+             MoneyText.text =   d.ToString("F3") + " Quadrillion Coins ";
         }
         if (MoneyAmount >= 1000000000000 && MoneyAmount < 1000000000000000)
         {
             d = (MoneyAmount / 1000000000000);
-            MoneyText.text = "$" + d.ToString("F3") + "T";
+            MoneyText.text =  d.ToString("F3") + " Trillion Coins";
         }
         if (MoneyAmount >= 1000000000 && MoneyAmount < 1000000000000)
         {
             d = (MoneyAmount / 1000000000);
-            MoneyText.text = "$" + d.ToString("F3") + "B";
+            MoneyText.text =  d.ToString("F3") + " Billion Coins";
         }
         if (MoneyAmount >= 1000000 && MoneyAmount < 1000000000)
         {
             d = (MoneyAmount / 1000000);
-            MoneyText.text = "$" + d.ToString("F3") + "M";
+            MoneyText.text =  d.ToString("F3") + " Million Coins";
         }
         if (MoneyAmount < 1000000)
-            MoneyText.text = "$" + MoneyAmount.ToString("F0");
+            MoneyText.text = MoneyAmount.ToString("F0") + " Coins";
 
 
     }
 
-    
+    void BeanAmountDisplay()
+    {
+
+        if (BeansAmount <= 1000000000000000000)
+        {
+            e = (BeansAmount / 1000000000000000000);
+            BeansText.text =   e.ToString("F3") + " Quintillion Beans";
+        }
+        if (BeansAmount >= 1000000000000000 && BeansAmount < 1000000000000000000)
+        {
+            e = (BeansAmount / 1000000000000000);
+            BeansText.text =  e.ToString("F3") + " Quadrillion Beans";
+        }
+        if (BeansAmount >= 1000000000000 && BeansAmount < 1000000000000000)
+        {
+            e = (BeansAmount / 1000000000000);
+            BeansText.text =  e.ToString("F3") + " Trillion Beans";
+        }
+        if (BeansAmount >= 1000000000 && BeansAmount < 1000000000000)
+        {
+            e = (BeansAmount / 1000000000);
+            BeansText.text = e.ToString("F3") + " Billion Beans";
+        }
+        if (BeansAmount >= 1000000 && BeansAmount < 1000000000)
+        {
+            e = (BeansAmount / 1000000);
+            BeansText.text = e.ToString("F3") + " Million Beans";
+        }
+        if (BeansAmount < 1000000)
+            BeansText.text = BeansAmount.ToString("F0") + " Beans";
+
+
+    }
+
+
 }
