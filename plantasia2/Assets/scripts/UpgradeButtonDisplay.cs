@@ -14,18 +14,22 @@ public class UpgradeButtonDisplay : MonoBehaviour {
     public static int HarvestS = 1;
     public static int BeanPrice = 1; 
     public static Double SoldS = 1;
-    public int b;
-    public int active = 0;
-    public double a;
     public double UpgradePrice;
-    public double c;
+    
     public Text NameText;
     public Text DescriptionText, DescriptionText2;
     public Text PriceText;
-    public int isMultiple;
+    
     public Button button;
 
-	void Start () {
+    private int isMultiple;
+    private int active = 0;
+    private int b;
+
+    private double a;
+    private double c;
+
+    void Start () {
         NameText.text = upgrade.name;
         DescriptionText.text = upgrade.description;
         DescriptionText2.text = upgrade.description2;

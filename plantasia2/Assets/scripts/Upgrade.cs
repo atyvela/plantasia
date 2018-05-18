@@ -17,5 +17,8 @@ public class Upgrade : ScriptableObject
     public double SoldUpgrade; // how much selling is upgraded
     public int isMultiple;
     
+
 }
+
+
 
